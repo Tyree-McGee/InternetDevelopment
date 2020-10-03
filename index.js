@@ -30,8 +30,6 @@ let item = class{
         this.name = name;
         this.price = price;
         this.description = description;
-        // Serialize to put on network
-        // let send = JSON.stringify(items[0]);
     }
 };
 
@@ -78,10 +76,6 @@ carts.find(cart => cart.customerId === 1).itemList.push(items.find(item => item.
 carts.find(cart => cart.customerId === 1).itemList.push(items.find(item => item.id === 2));
 carts.find(cart => cart.customerId === 1).itemList.push(items.find(item => item.id === 4));
 carts.find(cart => cart.customerId === 2).itemList.push(items.find(item => item.id === 3));
-//console.log(carts.find(cart => cart.customerId === 1));
-//console.log(JSON.stringify(carts))
-
-
 
 app.get('/user/:id', (req, res) => {
    const foundCustomer = customers.find((customer) => {return customer.id == req.params.id});
